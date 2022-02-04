@@ -11,9 +11,9 @@ setuptools.setup(
     description='Testing installation of Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/ManikandanRajendran/commons-automation',
+    url='https://github.com/ManikandanRajendran/commons',
     project_urls = {
-        "Bug Tracker": "https://github.com/ManikandanRajendran/commons-automation/issues"
+        "Bug Tracker": "https://github.com/ManikandanRajendran/commons/issues"
     },
     packages=['commons'],
     install_requires=['requests'],
