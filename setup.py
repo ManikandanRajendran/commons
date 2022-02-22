@@ -1,20 +1,36 @@
-import setuptools
+from setuptools import setup, find_packages
+import codecs, sys
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
 
-setuptools.setup(
-    name='commons',
-    version='0.0.1',
-    author='Manikandan Rajendran',
-    author_email='manikandan.rajendran@betwaygroup.com',
-    description='Testing installation of Package',
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url='https://github.com/ManikandanRajendran/commons',
-    project_urls = {
-        "Bug Tracker": "https://github.com/ManikandanRajendran/commons/issues"
-    },
-    packages=['commons'],
-    install_requires=['requests'],
+try:
+    with codecs.open( "README.md", 'r', errors='ignore' ) as file:
+        readme_contents = file.read()
+
+except Exception as error:
+    readme_contents = ""
+    sys.stderr.write( "Warning: Could not open README.md due %s\n" % error )
+
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Programming Language :: Python :: 3',
+    'Intended Audience :: Education'
+]
+
+setup(
+    name="commonsApi",
+    version="1.0.2",
+    description="This is a package to automate apis in a simple way by using common reusable functions",
+    long_description = readme_contents,
+    long_description_content_type='text/markdown',
+    url="https://github.com/ManikandanRajendran/python-package-for-api-testing",
+    author="Manikandan Rajendran",
+    author_email="r.manikandan.king@gmail.com",
+    license="MIT",
+    classifiers=classifiers,
+    keywords=["api automation", "api testing", "api commons", "python api", "api automation using python"],
+    packages=find_packages(),
+    install_requires=[
+        "jsonschema==4.4.0",
+        "requests==2.27.1"
+        ]
 )

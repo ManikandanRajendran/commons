@@ -1,3 +1,5 @@
-venv/
-.idea/
-instructions.txt
+!**/__pycache__/
+!**/env/
+.o
+.pyc
+.idea

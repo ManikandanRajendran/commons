@@ -1,21 +1,39 @@
-# common function
+# API Testing Commons
 
-commons is a Python package that contains handy functions. 
-It's main goal, however, is to demonstrate how to create a package.  
-Check out [this](https://mikehuls.medium.com/create-your-custom-python-package-that-you-can-pip-install-from-your-git-repository-f90465867893)
-article for a detailed explanation on how to create your 
-custom Python package that is installable from your GitHub repo!
+- This is a package to automate apis in a simple way by using common reusable functions.
 
-## Installation and updating
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Toolbox like below. 
-Rerun this command to check for and install  updates .
-```bash
-pip install git+https://
+- This module containes the major reusable functions which can be imported and accessed directly which will reduce the time and code redundancy.
+
+## Installation
+----------------
+
+```
+pip install commonsApi
 ```
 
-## Usage
-Features:
+## Methods available
+---------------------
+- > get_api(endpoint, header)
+- > post_api(endpoint, request_payload, header)
+- > put_api(endpoint, request_payload, header)
+- > delete_api(endpoint, data, header)
+- > patch_api(endpoint, request_payload, header)
+- > validate_status_code(response, expected_status)
+- > validate_schema(response, expected_schema)
+- > validate_strings(actual_message, expected_message)
+- > value_present(response, expected_value)
+- > is_json(response)
 
 
-#### Demo of some of the features:
+## Sample code
+
 ```python
+import commonsApi
+url = "https://api.postcodes.io/random/postcodes"
+header = {}
+resp = commonsApi.get_api(url, header)
+print(resp.json())
+```
+
+## Raise if any issues/changes needed
+ Please raise an issue [here](https://github.com/ManikandanRajendran/python-package-for-api-testing/issues) if anything
